@@ -16,22 +16,22 @@ import config from '../site.config';
       <h1 class="text-[25px] font-bold text-white/95 font-mono">CELL Studio</h1>
     </header>
     <div class="flex flex-col-reverse lg:flex-row">
-      <div class="flex lg:hidden justify-between sm:justify-center sm:gap-4 mt-8">
-        {
-          config.links.map(({ name, url }: { name: string; url: string }) => (
-            <div class="bg-primary px-1 sm:px-2 py-1">
-              <a
-                href={url}
-                target="_blank"
-                rel="noopener noreferrer"
-                class="text-white/95 font-mono text-xs sm:text-sm"
-              >
-                {name}
-              </a>
-            </div>
-          ))
-        }
-      </div>
+      <!-- <div class="flex lg:hidden justify-between sm:justify-center sm:gap-4 mt-8"> -->
+      <!--   { -->
+      <!--     config.links.map(({ name, url }: { name: string; url: string }) => ( -->
+      <!--       <div class="bg-primary px-1 sm:px-2 py-1"> -->
+      <!--         <a -->
+      <!--           href={url} -->
+      <!--           target="_blank" -->
+      <!--           rel="noopener noreferrer" -->
+      <!--           class="text-white/95 font-mono text-xs sm:text-sm" -->
+      <!--         > -->
+      <!--           {name} -->
+      <!--         </a> -->
+      <!--       </div> -->
+      <!--     )) -->
+      <!--   } -->
+      <!-- </div> -->
       <div class="flex-1 min-w-[50%]">
         <div class="max-w-full lg:max-w-[566px]">
           <div class="h-11 border-border border-2 border-b-0 flex justify-end">
@@ -92,22 +92,22 @@ import config from '../site.config';
             format="png"
           />
         </div>
-        <div class="hidden lg:flex gap-4">
-          {
-            config.links.map(({ name, url }: { name: string; url: string }) => (
-              <div class="bg-primary px-2 py-1">
-                <a
-                  href={url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="text-white/95 font-mono"
-                >
-                  {name}
-                </a>
-              </div>
-            ))
-          }
-        </div>
+        <!-- <div class="hidden lg:flex gap-4"> -->
+        <!--   { -->
+        <!--     config.links.map(({ name, url }: { name: string; url: string }) => ( -->
+        <!--       <div class="bg-primary px-2 py-1"> -->
+        <!--         <a -->
+        <!--           href={url} -->
+        <!--           target="_blank" -->
+        <!--           rel="noopener noreferrer" -->
+        <!--           class="text-white/95 font-mono" -->
+        <!--         > -->
+        <!--           {name} -->
+        <!--         </a> -->
+        <!--       </div> -->
+        <!--     )) -->
+        <!--   } -->
+        <!-- </div> -->
       </div>
     </div>
   </main>
