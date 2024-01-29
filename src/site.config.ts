@@ -5,11 +5,7 @@ export default {
       url: 'https://joy.id/',
     },
     {
-      name: 'Khalani',
-      url: 'https://khalani.network/',
-    },
-    {
-      name: 'Bytecoin',
+      name: 'Coinday',
       url: 'https://bytecoin.org/',
     },
     {
