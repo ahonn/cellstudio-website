@@ -22,8 +22,8 @@ import config from '../site.config';
       />
       <h1 class="text-[25px] font-bold text-white/95 font-mono">CELL Studio</h1>
     </header>
-    <div class="flex flex-col-reverse lg:flex-row">
-      <div class="flex lg:hidden justify-between sm:justify-center sm:gap-4 mt-8">
+    <div class="flex flex-col-reverse xl:flex-row">
+      <div class="flex xl:hidden justify-between sm:justify-center sm:gap-4 mt-8">
         {
           config.links.map(({ name }: { name: string }) => (
             <div class="bg-primary px-1 sm:px-2 py-1">
@@ -33,7 +33,7 @@ import config from '../site.config';
         }
       </div>
       <div class="flex-1 min-w-[50%]">
-        <div class="max-w-full lg:max-w-[566px]">
+        <div class="max-w-full xl:max-w-[566px]">
           <div class="h-11 border-border border-2 border-b-0 flex justify-end">
             {
               [minIcon, maxIcon, closeIcon].map((icon) => (
@@ -71,7 +71,7 @@ import config from '../site.config';
                 array of assets on the BTC Layer1.
               </p>
               <p>
-                <span class="text-primary">Concact:</span>
+                <span class="text-primary">Contact:</span>
                 <a class="text-secondary" href="mailto:baiyu@cell.studio">baiyu@cell.studio</a>
               </p>
             </div>
@@ -92,7 +92,7 @@ import config from '../site.config';
             format="png"
           />
         </div>
-        <div class="hidden lg:flex gap-4">
+        <div class="hidden xl:flex gap-4">
           {
             config.links.map(({ name }: { name: string }) => (
               <div class="bg-primary px-2 py-1">
