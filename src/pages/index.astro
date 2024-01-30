@@ -2,6 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import { Picture } from 'astro:assets';
 import logoImage from '../assets/logo.svg';
+import twitterImage from '../assets/twitter.svg';
 import asciiImage from '../assets/ascii.png';
 import minIcon from '../assets/min.svg';
 import maxIcon from '../assets/max.svg';
@@ -9,18 +10,32 @@ import closeIcon from '../assets/close.svg';
 import config from '../site.config';
 ---
 
-<Layout title="CELL Studio">
+<Layout>
   <main class="xl:px-6">
-    <header class="flex pb-8 gap-3 items-center">
-      <Picture
-        src={logoImage}
-        alt="CELL Studio"
-        width={42}
-        height={30}
-        loading="eager"
-        format="svg"
-      />
-      <h1 class="text-[25px] font-bold text-white/95 font-mono">CELL Studio</h1>
+    <header class="flex pb-8 items-center justify-between">
+      <div class="flex items-center gap-3 ">
+        <Picture
+          src={logoImage}
+          alt="CELL Studio"
+          width={42}
+          height={30}
+          loading="eager"
+          format="svg"
+        />
+        <h1 class="text-[25px] font-bold text-white/95 font-mono">CELL Studio</h1>
+      </div>
+      <div>
+        <a href={config.twitter} target="_blank">
+          <Picture
+            src={twitterImage}
+            alt={config.twitter}
+            width={48}
+            height={48}
+            loading="eager"
+            format="svg"
+          />
+        </a>
+      </div>
     </header>
     <div class="flex flex-col-reverse xl:flex-row">
       <div class="flex xl:hidden justify-between sm:justify-center sm:gap-4 mt-8">

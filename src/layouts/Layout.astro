@@ -1,28 +1,48 @@
 ---
-interface Props {
-  title: string;
-}
+import config from '../site.config';
+import { SEO } from 'astro-seo';
 
-const { title } = Astro.props;
+const { title, description } = config;
+const canonicalURL = 'https://cell.studio';
+
+const resolvedImageWithDomain = new URL('/og.png', Astro.site).toString();
 ---
 
 <!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta
-      name="description"
-      content="A blockchain software development company with a dedicated focus on the BTC ecosystem, committed to advancing the Nervos BTCKB initiative"
-    />
-    <meta name="viewport" content="width=device-width" />
+    <meta name="description" content={title} />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
       rel="stylesheet"
+    />
+
+    <SEO
+      title={title}
+      description={description}
+      canonical={canonicalURL}
+      twitter={{
+        creator: '@yuexunj',
+        site: '@blogitio',
+        card: 'summary_large_image',
+      }}
+      openGraph={{
+        basic: {
+          url: canonicalURL,
+          type: 'website',
+          title: `${title} - ${description}`,
+          image: resolvedImageWithDomain,
+        },
+        optional: {
+          description: description,
+        },
+      }}
     />
   </head>
   <body>
