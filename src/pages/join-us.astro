@@ -2,7 +2,8 @@
 import { getCollection } from 'astro:content';
 import Layout from '../layouts/Layout.astro';
 import { Picture } from 'astro:assets';
-import joinUsImage from '../assets/join-us.svg';
+import joinUsLeftImage from '../assets/join-us-left.svg';
+import joinUsRightImage from '../assets/join-us-right.svg';
 import nervosCellImage from '../assets/nervos-x-cell.png';
 import arrowRightImage from '../assets/arrow-right.svg';
 import { Content } from './join-us.md';
@@ -14,16 +15,20 @@ const allJobs = await getCollection('jobs');
   <div class="flex-1 flex justify-center">
     <div class="relative w-full xl:max-w-[1160px]">
       <Picture
-        src={joinUsImage}
-        alt="Join US"
+        src={joinUsLeftImage}
+        alt=""
         width="200"
         height="140"
         class="absolute -top-[18px] left-0 lg:left-[38px]"
       />
-      <div class="h-11 border-border border-2 border-b-0 flex justify-end"></div>
+      <div class="h-11 border-border border-2 border-b-0 flex justify-end">
+        <div class="px-8 h-full flex items-center">
+          <Picture src={joinUsRightImage} width="68" height="15" alt="" />
+        </div>
+      </div>
       <div class="px-6 sm:px-8 lg:px-10 lg:pt-10 border-border border-2 bg-[#0A0C14] pb-[150px]">
-        <div class="flex w-full gap-10 flex-col lg:flex-row pt-28 lg:pt-0">
-          <div class="flex-1 flex flex-col justify-center gap-4">
+        <div class="flex w-full gap-10 flex-col lg:flex-row">
+          <div class="flex-1 flex flex-col justify-center gap-4 pt-24 lg:pt-20">
             <Picture src={nervosCellImage} alt="Nervos x Cell" width="144" height="56" />
             <h1 class="text-white text-[32px] font-mono">Introduction</h1>
           </div>
