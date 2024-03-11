@@ -6,6 +6,7 @@ export default {
       colors: {
         primary: '#FF9500',
         secondary: '#3490E6',
+        body: '#DDDDDD',
         background: {
           DEFAULT: '#14161F',
         },
@@ -26,5 +27,5 @@ export default {
       },
     },
   },
-  plugins: [],
+  plugins: [require('@tailwindcss/typography')],
 };

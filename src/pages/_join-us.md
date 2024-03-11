@@ -1,0 +1,7 @@
+## About Nervos & CKB
+
+[Nervos Network](https://github.com/nervosnetwork) is a layered blockchain network. [CKB](https://github.com/nervosnetwork/ckb) is the layer 1 of Nervos Network, a public permissionless blockchain. CKB uses [Proof of Work](https://en.wikipedia.org/wiki/Proof_of_work) and [enhanced Nakamoto consensus](https://medium.com/nervosnetwork/breaking-the-throughput-limit-of-nakamoto-consensus-ccdf65fe0832) to achieve maximized performance on average hardware and internet conditions, without sacrificing decentralization and security which are the core values of blockchain. CKB supports scripting in any programming language with its own [CKB-VM](https://github.com/nervosnetwork/ckb-vm/), a virtual machine fully compatible with RISC-V ISA. CKB is a [General Verification Network](https://medium.com/nervosnetwork/https-medium-com-nervosnetwork-cell-model-7323fca57571), its programming model focuses on state verification, leaving state generation to layer 2 applications/protocols. The Nervos CKB mainnet launched in 2019.
+
+## About CELL Studio
+
+[CELL Studio](https://cell.studio) is working hard to utilize the "PoW+UTXO" framework, facilitate the integration of BTC and CKB, and propel the development and prosperity of the Nervos ecosystem. If you love solving challenging problems, system programming, Rust, enjoy learning, want to make the world better with your talents, and believe in blockchain, please join us to invent the new internet of trust and value.

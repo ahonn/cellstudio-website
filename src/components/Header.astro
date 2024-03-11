@@ -1,0 +1,39 @@
+---
+import { Picture } from 'astro:assets';
+import logoImage from '../assets/logo.svg';
+import twitterImage from '../assets/twitter.svg';
+import config from '../site.config';
+---
+
+<header class="flex pb-8 items-center justify-between">
+  <div class="flex items-center">
+    <a href="/" class="flex items-center gap-3">
+      <Picture
+        src={logoImage}
+        alt="CELL Studio"
+        width={42}
+        height={30}
+        loading="eager"
+        format="svg"
+        class="w-8 sm:w-10"
+      />
+      <h1 class="text-lg sm:text-[25px] font-bold text-body font-mono">CELL Studio</h1>
+    </a>
+  </div>
+  <div class="flex items-center gap-4 sm:gap-8">
+    <a href="/join-us" class="font-medium text-primary cursor-pointer font-mono text-sm sm:text-base">
+      Join Us
+    </a>
+    <a href={config.twitter} target="_blank">
+      <Picture
+        src={twitterImage}
+        alt={config.twitter}
+        width={48}
+        height={48}
+        loading="eager"
+        format="svg"
+        class="w-8 sm:w-12"
+      />
+    </a>
+  </div>
+</header>

@@ -1,0 +1,46 @@
+---
+import { getCollection, getEntry } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+
+export async function getStaticPaths() {
+  const allJobs = await getCollection('jobs');
+  return allJobs.map((job) => ({
+    params: {
+      job: job.slug,
+    },
+  }));
+}
+
+const { job } = Astro.params;
+const entry = await getEntry('jobs', job);
+const { Content, remarkPluginFrontmatter } = await entry.render();
+---
+
+<Layout>
+  <div class="w-full flex justify-center">
+    <div
+      class="max-w-[780px] prose prose-sm prose-h1:text-white prose-h2:text-white prose-h2:text-xl
+      prose-p:text-body prose-li:text-body prose-li:my-0 prose-li:leading-snug prose-a:text-secondary
+      prose-a:no-underline font-mono"
+    >
+      <div
+        class="bg-[#1A1C27] px-6 md:px-9 py-6 border border-border border-l-4 border-l-primary flex justify-between items-center gap-2"
+      >
+        <div class="flex flex-col">
+          <h1 class="text-white mb-2 text-lg sm:text-xl md:text-2xl">
+            {remarkPluginFrontmatter.title}
+          </h1>
+          <p class="text-[#A6ADB5] text-sm font-medium my-0">
+            <span>{remarkPluginFrontmatter.location}</span>
+            <span> / </span>
+            <span>{remarkPluginFrontmatter.type}</span>
+          </p>
+        </div>
+        <span class="text-base sm:text-xl md:text-2xl text-primary font-bold text-nowrap whitespace-nowrap">
+          {remarkPluginFrontmatter.salary}
+        </span>
+      </div>
+      <Content />
+    </div>
+  </div>
+</Layout>

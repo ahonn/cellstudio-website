@@ -1,0 +1,90 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../layouts/Layout.astro';
+import { Picture } from 'astro:assets';
+import joinUsLeftImage from '../assets/join-us-left.svg';
+import joinUsRightImage from '../assets/join-us-right.svg';
+import nervosCellImage from '../assets/nervos-x-cell.png';
+import arrowRightImage from '../assets/arrow-right.svg';
+import { Content } from './_join-us.md';
+
+const allJobs = await getCollection('jobs');
+---
+
+<Layout>
+  <div class="flex-1 flex justify-center">
+    <div class="relative w-full xl:max-w-[1160px]">
+      <Picture
+        src={joinUsLeftImage}
+        alt=""
+        width="200"
+        height="140"
+        class="absolute -top-[18px] left-0 lg:left-[38px]"
+      />
+      <div class="h-11 border-border border-2 border-b-0 flex justify-end">
+        <div class="px-8 h-full flex items-center">
+          <Picture src={joinUsRightImage} width="68" height="15" alt="" />
+        </div>
+      </div>
+      <div class="px-6 sm:px-8 lg:px-10 lg:pt-10 border-border border-2 bg-[#0A0C14] pb-[150px]">
+        <div class="flex w-full gap-10 flex-col lg:flex-row">
+          <div class="flex-1 flex flex-col justify-center gap-4 pt-24 lg:pt-20">
+            <Picture src={nervosCellImage} alt="Nervos x Cell" width="144" height="56" />
+            <h1 class="text-white text-[32px] font-mono">Introduction</h1>
+          </div>
+          <div
+            class="prose max-w-[750px] font-mono prose-h2:text-lg prose-h2:font-bold prose-h2:text-primary
+            prose-p:text-body prose-p:text-sm prose-p:leading-normal prose-p:font-medium prose-h2:mt-0
+            prose-a:text-secondary prose-a:no-underline"
+          >
+            <Content />
+          </div>
+        </div>
+      </div>
+      <div class="relative w-full px-6 lg:px-[60px] z-10 -top-[120px] font-mono">
+        <div class="bg-[#1A1C27] border-border border-2 p-4 sm:px-6 lg:px-10 sm:py-6">
+          <div class="flex flex-col lg:flex-row justify-between">
+            <div class="w-fit mb-4">
+              <h2 class="font-mono text-xl font-bold text-primary">Job List</h2>
+            </div>
+            <div class="w-full max-w-[780px]">
+              <ul>
+                {
+                  allJobs.map((job) => (
+                    <li class="border-b border-border last:border-b-0 first:pt-0 last:pb-0 py-4">
+                      <div class="flex justify-between">
+                        <div class="flex flex-col">
+                          <a
+                            href={`/job/${job.slug}`}
+                            class="font-bold text-sm md:text-md lg:text-lg mb-1"
+                          >
+                            <span class="text-body">{job.data.title}</span>
+                            <span class="text-primary hidden sm:inline">{job.data.salary}</span>
+                          </a>
+                          <p class="text-[#A6ADB5] text-xs sm:text-sm font-medium">
+                            <span>{job.data.location}</span>
+                            <span> / </span>
+                            <span>{job.data.type}</span>
+                          </p>
+                        </div>
+                        <a href={`/job/${job.slug}`} class="flex items-center ml-2">
+                          <Picture
+                            src={arrowRightImage}
+                            alt="Arrow Right"
+                            width="40"
+                            height="40"
+                            class="w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10"
+                          />
+                        </a>
+                      </div>
+                    </li>
+                  ))
+                }
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</Layout>
