@@ -1,8 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import { Picture } from 'astro:assets';
-import logoImage from '../assets/logo.svg';
-import twitterImage from '../assets/twitter.svg';
 import asciiImage from '../assets/ascii.png';
 import minIcon from '../assets/min.svg';
 import maxIcon from '../assets/max.svg';
@@ -11,112 +9,86 @@ import config from '../site.config';
 ---
 
 <Layout>
-  <main class="xl:px-6">
-    <header class="flex pb-8 items-center justify-between">
-      <div class="flex items-center gap-3 ">
-        <Picture
-          src={logoImage}
-          alt="CELL Studio"
-          width={42}
-          height={30}
-          loading="eager"
-          format="svg"
-        />
-        <h1 class="text-[25px] font-bold text-white/95 font-mono">CELL Studio</h1>
-      </div>
-      <div>
-        <a href={config.twitter} target="_blank">
-          <Picture
-            src={twitterImage}
-            alt={config.twitter}
-            width={48}
-            height={48}
-            loading="eager"
-            format="svg"
-          />
-        </a>
-      </div>
-    </header>
-    <div class="flex flex-col-reverse xl:flex-row">
-      <div class="flex xl:hidden justify-between sm:justify-center sm:gap-4 mt-8">
-        {
-          config.links.map(({ name }: { name: string }) => (
-            <div class="bg-primary px-2 py-1">
-              <span class="text-white/95 font-mono text-xs sm:text-sm">{name}</span>
-            </div>
-          ))
-        }
-      </div>
-      <div class="flex-1 min-w-[50%]">
-        <div class="max-w-full xl:max-w-[566px]">
-          <div class="h-11 border-border border-2 border-b-0 flex justify-end">
-            {
-              [minIcon, maxIcon, closeIcon].map((icon) => (
-                <div class="border-l-2 border-border">
-                  <Picture
-                    src={icon}
-                    alt="icon"
-                    width={44}
-                    height={48}
-                    loading="eager"
-                    format="svg"
-                  />
-                </div>
-              ))
-            }
+  <div class="flex flex-col-reverse xl:flex-row">
+    <div class="flex xl:hidden justify-between sm:justify-center sm:gap-4 mt-8">
+      {
+        config.links.map(({ name }: { name: string }) => (
+          <div class="bg-primary px-2 py-1">
+            <span class="text-body font-mono text-xs sm:text-sm">{name}</span>
           </div>
-          <div class="px-6 sm:px-8 lg:p-10 border-border border-2">
-            <div class="my-2">
-              <span class="text-primary text-[44px]">{'<>'}</span>
-            </div>
-            <div class="text-white/95 text-[15px] font-medium leading-5 font-mono [&>p]:mb-4">
-              <p>
-                <span class="text-primary">CELL Studio</span> is a blockchain software development company
-                with a dedicated focus on the BTC ecosystem, committed to advancing the Nervos BTCKB
-                initiative. Our goal is to facilitate the integration of BTC and CKB, empowering CKB
-                to emerge as the premier Bitcoin Layer2 solution fully interoperable with BTC, utilizing
-                a <span class="text-secondary">"PoW+UTXO"</span> framework.
-              </p>
-              <p>
-                Much like ConsenSys' pivotal role in the Ethereum ecosystem, Cell Studio is poised
-                to play a crucial part within the Nervos ecosystem. Founded under the auspices of
-                the Nervos ecosystem fund InNervation and helmed by Nervos co-founder Cipher, our
-                mission is to propel the development and prosperity of the Nervos ecosystem. We
-                achieve this by harnessing potent smart contract capabilities to enable a diverse
-                array of assets on the BTC Layer1.
-              </p>
-              <p>
-                <span class="text-primary">Contact:</span>
-                <a class="text-secondary" href="mailto:cipher@cell.studio">cipher@cell.studio</a>
-              </p>
-            </div>
-            <div class="my-2">
-              <span class="text-primary text-[44px]">{'</>'}</span>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="flex-1 flex flex-col justify-between pb-8 lg:py-14 lg:px-10 xl:px-14">
-        <div class="max-w-full">
-          <Picture
-            src={asciiImage}
-            alt="CELL Studio"
-            width={610}
-            height={350}
-            loading="eager"
-            format="png"
-          />
-        </div>
-        <div class="hidden xl:flex gap-4">
+        ))
+      }
+    </div>
+    <div class="flex-1 min-w-[50%]">
+      <div class="max-w-full xl:max-w-[566px]">
+        <div class="h-11 border-border border-2 border-b-0 flex justify-end">
           {
-            config.links.map(({ name }: { name: string }) => (
-              <div class="bg-primary px-2 py-1">
-                <span class="text-white/95 font-mono">{name}</span>
+            [minIcon, maxIcon, closeIcon].map((icon) => (
+              <div class="border-l-2 border-border">
+                <Picture
+                  src={icon}
+                  alt="icon"
+                  width={44}
+                  height={48}
+                  loading="eager"
+                  format="svg"
+                />
               </div>
             ))
           }
         </div>
+        <div class="px-6 sm:px-8 lg:p-10 border-border border-2 bg-[#0A0C14]">
+          <div class="my-2">
+            <span class="text-primary text-[44px]">{'<>'}</span>
+          </div>
+          <div class="text-body text-[15px] font-medium leading-5 font-mono [&>p]:mb-4">
+            <p>
+              <span class="text-primary">CELL Studio</span> is a blockchain software development company
+              with a dedicated focus on the BTC ecosystem, committed to advancing the Nervos BTCKB initiative.
+              Our goal is to facilitate the integration of BTC and CKB, empowering CKB to emerge as the
+              premier Bitcoin Layer2 solution fully interoperable with BTC, utilizing a <span
+                class="text-secondary">"PoW+UTXO"</span
+              > framework.
+            </p>
+            <p>
+              Much like ConsenSys' pivotal role in the Ethereum ecosystem, Cell Studio is poised to
+              play a crucial part within the Nervos ecosystem. Founded under the auspices of the
+              Nervos ecosystem fund InNervation and helmed by Nervos co-founder Cipher, our mission
+              is to propel the development and prosperity of the Nervos ecosystem. We achieve this
+              by harnessing potent smart contract capabilities to enable a diverse array of assets
+              on the BTC Layer1.
+            </p>
+            <p>
+              <span class="text-primary">Contact:</span>
+              <a class="text-secondary" href="mailto:cipher@cell.studio">cipher@cell.studio</a>
+            </p>
+          </div>
+          <div class="my-2">
+            <span class="text-primary text-[44px]">{'</>'}</span>
+          </div>
+        </div>
       </div>
     </div>
-  </main>
+    <div class="flex-1 flex flex-col justify-between pb-8 lg:py-14 lg:px-10 xl:px-14">
+      <div class="max-w-full">
+        <Picture
+          src={asciiImage}
+          alt="CELL Studio"
+          width={610}
+          height={350}
+          loading="eager"
+          format="png"
+        />
+      </div>
+      <div class="hidden xl:flex gap-4">
+        {
+          config.links.map(({ name }: { name: string }) => (
+            <div class="bg-primary px-2 py-1">
+              <span class="text-body font-mono">{name}</span>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </div>
 </Layout>
