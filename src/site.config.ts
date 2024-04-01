@@ -9,9 +9,11 @@ const config = {
     },
     {
       name: 'RGB++',
+      url: 'https://github.com/ckb-cell/RGBPlusPlus-design',
     },
     {
       name: 'CoTA',
+      url: 'https://www.cotadev.io/'
     },
     {
       name: 'Spore',
@@ -19,7 +21,7 @@ const config = {
     },
     {
       name: 'Forcebridge',
-      url: 'https://forcebridge.com/',
+      url: 'https://forcebridge.com/bridge/Ethereum/Nervos',
     },
   ],
 };
