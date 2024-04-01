@@ -12,9 +12,11 @@ import config from '../site.config';
   <div class="flex flex-col-reverse xl:flex-row">
     <div class="flex xl:hidden justify-between sm:justify-center sm:gap-4 mt-8">
       {
-        config.links.map(({ name }: { name: string }) => (
+        config.links.map(({ name, url }: { name: string; url: string }) => (
           <div class="bg-primary px-2 py-1">
-            <span class="text-body font-mono text-xs sm:text-sm">{name}</span>
+            <a class="text-body font-mono text-xs sm:text-sm" href={url} target="_blank">
+              {name}
+            </a>
           </div>
         ))
       }
@@ -82,9 +84,11 @@ import config from '../site.config';
       </div>
       <div class="hidden xl:flex gap-4">
         {
-          config.links.map(({ name }: { name: string }) => (
+          config.links.map(({ name, url }: { name: string; url: string }) => (
             <div class="bg-primary px-2 py-1">
-              <span class="text-body font-mono">{name}</span>
+              <a class="text-body font-mono" href={url} target="_blank">
+                {name}
+              </a>
             </div>
           ))
         }
